@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 def index
   # render 'home/index'
-  @article = Article.first
+  @articles = Article.all
 end
 
 
