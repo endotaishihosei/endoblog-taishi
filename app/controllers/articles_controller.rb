@@ -22,6 +22,10 @@ def create
   end
 end
 
+def edit
+  @article = Article.find(params[:id])
+end
+
 private
 def article_params
   params.require(:article).permit(:title, :content)
