@@ -11,10 +11,13 @@ $back-icon-size: 16px;
   padding: $header-padding-y 16px;
   font-weight: bold;
 
+ 
+
   &_logos {
     min-width: 0px;
     display: flex;
   }
+
 
   img {
     cursor: pointer;
