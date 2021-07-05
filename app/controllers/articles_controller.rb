@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update]
+  before_action :set_article, only: [:show]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 def index
@@ -29,10 +29,13 @@ end
 
 def edit
   # @article = Article.find(params[:id])
+  @article = current_user.articles.find(params[:id])
+  # current_userから探してくることでセキュリティ対策
 end
 
 def update
   # @article = Article.find(params[:id])
+  @article = current_user.articles.find(params[:id])
   if @article.update(article_params)
   # フォームの入力内容が渡ってくる
   redirect_to article_path(@article), notice: '更新できました'
