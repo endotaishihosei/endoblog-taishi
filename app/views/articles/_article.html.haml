@@ -9,5 +9,8 @@
       .card_detail
         = image_tag 'default-avatar.png'
         %div
-          %p cohki0305
-          %p= article.display_created_at
+        - if article.user.present?
+          %p= article.user.display_name
+        - else 
+          %p unkown
+        %p= article.display_created_at
